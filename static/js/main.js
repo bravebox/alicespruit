@@ -8,23 +8,21 @@
 
             	paths: {
             		// libs
-						jquery: 	'lib/jquery-1.9.1.min',
-						Modernizr: 	'lib/modernizr',
-						waypoints: 	'lib/waypoints',
-						500px: 		'lib/500px',
-        
-            		// core
-            			base: 		'core/base',
-            			resize: 	'core/resize',
-            			social: 	'core/social',
-            			slider: 	'core/slider',
-        
-            		// cycle2			
-            			cycle2_lib: 		'lib/jquery.cycle2.min',
-            			cycle2_carousel: 	'lib/jquery.cycle2.carousel.min',
-						cycle2_fade: 		'lib/jquery.cycle2.ie-fade.min'
-            	},
+						domReady: 		'lib/domReady',
+						jquery: 		'lib/jquery',
+						Modernizr: 		'lib/modernizr',
+						waypoints: 		'lib/waypoints',
+						
+						fpxa: 			'lib/500px',
+						photoset: 		'lib/jquery.photoset-grid',
+						colorbox: 		'lib/jquery.colorbox',
 
+            		// core
+            			base: 			'core/base',
+            			resize: 		'core/resize',
+            			social: 		'core/social',
+            			slider: 		'core/slider'
+            	},
             	shim: {
             		Modernizr: {
                 		exports: 'Modernizr'
@@ -32,42 +30,56 @@
             		waypoints: {
             			deps: ['jquery']
             		},
-            		cycle2_lib: {
+            		photoset: {
+            			deps: ['jquery']
+            		},
+            		colorbox: {
             			deps: ['jquery']
             		}
             	}
-
             });
         
         /*
         Modules
         ------------------------------------------------ */
-        
+			
+			require(['Modernizr']);        
             require(['base']);
             require(['social']);
+            
+        /*
+        500px
+        ------------------------------------------------ */
 
-            require(['500px'], function() {
-	            
+            require(['domReady!', 'fpxa', 'photoset', 'colorbox'], function() {
+
 				_500px.init({
 					sdk_key: '94031710488237b06315570e2f960a9c01eefe92'
 				});
 				
-				_500px.api('/photos', { feature: 'popular', page: 1 }, function (response) {
-				    console.log(response.data.photos);
-				});				
-	            
+				var images = "";
+
+				_500px.api('/photos', { feature: 'user', user_id: '2860815', image_size: 3 }, function (response) {
+					$.each(response.data.photos, function(index, value) {
+
+						var $img = $('<img data-id="'+value.id+'" class="js--colorbox-grp">');
+							$img.attr('src', value.image_url);
+							$img.appendTo('.js--photoset');
+					});
+
+					$(".js--photoset").photosetGrid().show();
+				});
+
+				/*
+				var loadSingleImage = function() {
+					_500px.api('/photos/'+id, { image_size: 4 }, function (r) {
+						var $img = $('<img>');
+							$img.attr('src', r.data.photo.image_url);
+							console.log($img);
+					});
+				}
+				*/
             });
-
-
-
-
-        /*
-        Cycle2 sliders
-        ------------------------------------------------ */
-
-			/*require(['jquery','cycle2_lib', 'cycle2_carousel'], function() {
-				$('.cycle-slider').cycle();
-			});*/
 
         /*
         Resize
@@ -86,11 +98,3 @@
         		scaleElement();            
             });
 
-
-		/* modernizr
-		--------------------------------------------- */
-
-			define(['Modernizr'],function(Modernizr) {
-			    'use strict';
-					if(console) console.log(Modernizr);
-			});
