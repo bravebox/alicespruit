@@ -2,6 +2,7 @@ css_dir : "static/css"
 images_dir : "static/img"
 javascripts_dir : "static/js"
 fonts_dir : "static/fonts"
+
 output_style: compressed
 environment: development
 line_comments: false

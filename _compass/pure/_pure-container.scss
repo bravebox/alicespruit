@@ -1,0 +1,51 @@
+
+	/*
+	Container
+	------------------------------------------ 
+	*/
+
+		.pure-c {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			.pure-g {
+				@include box-sizing;
+				box-sizing: border-box;
+				padding-left: 15px;
+				padding-right: 15px;
+				margin: 0 auto;	
+				width: 100%;
+			}
+		}
+		
+		@include breakpoint($breakpoint-sm) {
+			.pure-c {
+				.pure-g {
+					max-width: 100%; 
+				}
+			}
+		}		
+
+		@include breakpoint($breakpoint-md) {
+			.pure-c {
+				.pure-g {
+					max-width: 768px;
+				}
+			}
+		}		
+
+		@include breakpoint($breakpoint-lg) {
+			.pure-c {
+				.pure-g {
+					max-width: 1024px;
+				}
+			}
+		}		
+
+		@include breakpoint($breakpoint-xl) {
+			.pure-c {
+				.pure-g {
+					max-width: 1280px;
+				}
+			}
+		}

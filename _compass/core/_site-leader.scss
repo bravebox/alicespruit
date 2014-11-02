@@ -1,0 +1,122 @@
+
+	/*
+	Site leader
+	------------------------------------------ 
+	*/
+	
+		.site-leader {
+			@include clearfix;
+			position: relative;
+			width: 100%;
+			display: block;	
+			height: 320px;
+		}
+
+			.site-leader--bg {
+				background: url(../img/alice-spruit-leader.jpg) center center no-repeat;
+				@include background-cover;
+			}
+			
+			.site-leader__title {
+				position: static;
+				width: 100%;
+				background: rgba(255,255,255,0.6);
+				max-width: 100%;
+				margin: 0;
+				float: left;
+				padding: 90px 0px;
+				height: 100%;
+
+				h2, h3 {
+					@include box-sizing;
+					color: $_secondary_color;
+					display: inline-block;
+					letter-spacing: 1px;
+					width: 100%;
+					margin: 0;
+					padding: 10px;
+				}
+				
+				h1 {
+					@include box-sizing;
+					color: $_secondary_color;
+					width: auto;
+					display: inline-block;
+					font-size: 30px;
+					border-bottom: solid 6px $_primary_color;
+					padding: 10px 20px;
+				}
+
+				h3 {
+					font-size: 12px;
+				}
+
+				* {
+					letter-spacing: normal;
+				}
+			}
+
+			.section__title {
+				display: inline-block;
+				padding-bottom: 10px;
+				border-bottom: solid 6px $_primary_color;
+			}
+			
+
+
+			
+
+		/*
+		Breakpoints
+		------------------------------------------ 
+		*/
+
+			@include breakpoint($breakpoint-sm) {
+				.site-leader {
+					height: 320px; 
+				}
+			}		
+	
+			@include breakpoint($breakpoint-md) {
+				.site-leader {
+					height: 480px; 
+				}
+				
+				.site-leader__title {
+					position: absolute;
+					bottom: 20px;
+					margin-left: -220px;
+					left: 30%;
+					width: 100%;
+					height: 170px;
+					max-width: 440px;
+					background: none;
+					
+					h1 {
+						font-size: 40px;
+						padding-bottom: 10px;
+					}
+					
+					h3 {
+						font-size: 20px;
+						padding-bottom: 20px;
+					}
+				}				
+				
+			}
+	
+			@include breakpoint($breakpoint-lg) {
+				.site-leader {
+					height: 640px; 
+				}
+				.site-leader__title { 
+					position: absolute;
+					bottom: 18%;
+					left: 50%;
+					width: 100%;
+					height: 170px;
+				}
+			}
+			
+			
+			

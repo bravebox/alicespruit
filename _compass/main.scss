@@ -1,0 +1,122 @@
+
+	/*
+	Dependencies
+	------------------------------------------ 
+	*/
+		
+		@import "compass/css3";
+		@import "compass/utilities/general/clearfix";
+
+		@import "lib/breakpoint/breakpoint";
+		@import "animate";
+		@import "fonts";
+		@import "mixins";
+		@import "vars";
+
+	/*
+	Pure CSS (www.purecss.io)
+	------------------------------------------ 
+	*/
+
+		@import "pure/pure-min";
+		@import 'pure/pure-skin';
+		@import 'pure/pure-text';
+		@import 'pure/pure-section';
+		@import 'pure/pure-container';
+		@import 'pure/pure-panel';
+
+	/*
+	Alice Spruit
+	------------------------------------------ 
+	*/
+		
+		@import 'core/primary-header';
+		@import 'core/site-leader';
+		@import 'core/buttons';
+
+	/*
+	Add to scss's
+	------------------------------------------ 
+	*/
+
+		body {
+			background: #ececec;
+		}
+
+		.content-wrapper {
+			position: relative;
+			max-width: 1600px;
+			width: 100%;
+			margin: 0 auto;
+		}
+		
+		.post-arhief-list {
+			@include noList;
+			padding: 40px 0px;
+		}
+		
+		.post-list {
+			@include noList;
+			padding: 20px 0px;
+			li {
+				position: relative;
+				display: block;
+				width: 100%;
+				//border-bottom: solid 1px $_secondary_color;
+				padding: 10px 0px;
+				margin-bottom: 20px;
+				
+				&:before {
+					content: attr(data-date);
+					color: rgba($_secondary_color, 0.5);
+					position: absolute;
+					width: 100px;
+					left: -120px;
+					top: 18px;
+					letter-spacing: normal;
+					text-align: right;
+					font-size: 18px;
+					font-weight: normal;
+				}
+				
+				&:after {
+					content: '';
+					width: 100%;
+					height: 1px;
+					
+					position: absolute;
+					bottom: 0px;
+					left: 0px;
+					
+					background-color: #313940; // Old browsers
+					@include filter-gradient(#313940, #e5e5e5, horizontal); // IE6-8
+					$experimental-support-for-svg: true;
+					@include background-image(linear-gradient(left,  #313940 0%,#313940 70%,#e5e5e5 100%));
+				}
+				
+				.post-list__header,
+				.post-list__footer {
+					@include clearfix;
+					position: relative;
+				}
+				
+				.post-list__footer a {
+					color: rgba($_secondary_color, 0.6);
+				}
+
+				.post-link {
+					margin: 0;
+					a {
+						@include transition-property(all);
+						@include transition-duration(0.3s);					
+						text-decoration: none;
+						
+										
+						
+						&:hover {
+							opacity: 0.7;	
+						}
+					}
+				}
+			}
+		}

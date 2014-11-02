@@ -1,0 +1,91 @@
+
+	.pure-section {
+		display: block;
+		width: 100%;
+	}
+		
+		.pure-section--primary {
+			background: $_primary_color;
+			a {
+				color: $_secondary_color;
+			}
+			.entry-content {
+				color: $_secondary_color;
+			}			
+		}
+		
+		.pure-section--secondary {
+			background: $_secondary_color;
+			a {
+				color: $_primary_color;
+			}
+			.entry-content {
+				color: #fff;
+			}			
+		}
+		
+		.pure-section--tertiary {
+			background: #fff;
+			a {
+				color: $_secondary_color;
+			}
+			.entry-content {
+				color: $_secondary_color;
+			}
+		}
+
+		.pure-section--quaternary {
+			background: #f7f7f7;
+			a {
+				color: $_secondary_color;
+			}
+			.entry-content {
+				color: $_secondary_color;
+			}			
+		}
+
+		.pure--center {
+			margin: 0 auto;
+		}
+		
+		
+	/*
+	Section padding
+	------------------------------------------ 
+	*/
+
+		.pure-section--padding {
+			padding: 30px 0px;
+		}
+		
+		@include breakpoint($breakpoint-sm) {
+			.pure-section--padding {
+				padding: 60px 0px;
+			}
+		}		
+
+		@include breakpoint($breakpoint-md) {
+			.pure-section--padding {
+				padding: 70px 0px;
+			}
+			.entry-content p {
+				font-size: 90%;
+				line-height: 1.6em;
+			}
+		}		
+
+		@include breakpoint($breakpoint-lg) {
+			.pure-section--padding {
+				padding: 90px 0px;
+			}
+		}		
+
+		@include breakpoint($breakpoint-xl) {
+			.pure-section--padding {
+				padding: 100px 0px;
+			}
+			.entry-content p {
+				font-size: 110%;
+				line-height: 1.8em; 
+			}
+		}

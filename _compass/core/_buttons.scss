@@ -1,0 +1,22 @@
+
+
+
+	/*
+	Buttons
+	------------------------------------------ 
+	*/
+	
+		.primary-button {
+			@include transition-property(all);
+			@include transition-duration(0.6s);
+		
+			border: solid 1px $_primary_color;
+			color: $_secondary_color;
+			padding: 10px 30px;
+			text-align: center;
+			text-decoration: none;
+			
+			&:hover {
+				background-color: $_primary_color;
+			}
+		}

@@ -1,0 +1,60 @@
+
+	/*
+	Panels
+	------------------------------------------ 
+	*/
+		
+		.pure-panel {
+			@include box-sizing;
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+		}
+		
+			.pure-panel__title {
+				position: relative;
+				padding: 20px;
+				background: #fff;
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: -10px;
+					left: 50%;
+					margin-left: -5px; 
+				
+					margin: 0 auto;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 10px 10px 0 10px;
+					border-color: #ffffff transparent transparent transparent;
+				}
+			}
+			
+			.pure-panel__photo {
+				
+			}
+			
+			.pure-panel--controller {
+				min-height: 160px;
+			}
+			
+			
+			@include breakpoint($breakpoint-sm) {
+			}		
+	
+			@include breakpoint($breakpoint-md) {
+				.pure-panel--controller {
+					min-height: 200px;
+				}
+			}		
+	
+			@include breakpoint($breakpoint-lg) {
+				.pure-panel--controller {
+					min-height: 240px;
+				}
+			}		
+	
+			@include breakpoint($breakpoint-xl) {
+			}			
+				

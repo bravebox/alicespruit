@@ -1,0 +1,144 @@
+
+
+	/*
+	Primary header
+	------------------------------------------ 
+	*/
+		$_offset: 0px;
+		
+		.primary-header {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 100%;
+			z-index: 1050;
+		}
+		
+			@include keyframe('left_in') {
+			    0% {
+			        left: $_offset;
+			    }
+			    100% {
+			        left: 0px;
+			    }
+			}
+			
+			body.no-scroll {
+				height: 100%;
+				width: 100%;
+				overflow: hidden;
+			}
+		
+		
+			.primary-nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 8;
+
+				display: none;
+				width: 100%;
+				height: 100%;
+
+				background: rgba(white, 0.9);
+				
+				ul {
+					@include noList;
+					position: absolute;
+					top: 0px;
+					left: 0px;
+					width: 320px;
+					height: 100%;
+					padding-top: 80px;
+
+					li {
+						@include transition-property(all);
+						@include transition-duration(0.6s);
+						
+						position: relative;
+						display: block;
+
+						left: $_offset; // animate
+
+						h2 {
+							color: $_primary_color;
+							font-size: 1em;
+							padding-left: 20px;
+							padding-top: 20px;
+						}
+
+						a {
+							@include AnticSlab;
+							font-size: 1.6em;
+							color: $_secondary_color;
+							padding: 6px 20px;
+							border-bottom: solid 1px $_secondary_color;
+							text-align: none;
+							text-decoration: none;
+							display: inline-block;
+
+							&:hover {
+								color: $_primary_color;
+								text-decoration: none;
+							}
+						}
+
+						&.sm {
+							a {
+								font-size: 1.2em;
+							}
+						}
+
+						input {
+							padding-left: 20px;
+							border: none;
+							border-bottom: solid 1px #333;
+							background: none;
+						}
+					}
+				}
+
+				&.active {
+					display: block;
+					ul {
+						li {
+							@for $i from 1 through 10 {
+								&:nth-child( #{$i} ) {
+									@include transition-delay(#{$i/100}s);
+									left: 0px !important;
+								}
+							}
+						}
+					}
+				}
+			}		
+
+
+			#open-menu,
+			#close-menu,
+			#back-menu {
+				position: absolute;
+				top: 20px;
+				font-size: 30px;
+				color: #333;
+				padding: 0px 7px;
+				text-decoration: none;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+			#open-menu {
+				z-index: 1;
+				left: 20px;
+			}
+
+			#close-menu {
+				z-index: 9;
+				left: 20px;
+			}
+
+			#back-menu {
+				z-index: 9;
+				right: 20px;
+			}

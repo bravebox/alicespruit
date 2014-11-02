@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+  	{% include head.html %}
 
-  <body>
+  	<body>
 
-    {% include header.html %}
+	  	{% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+		<div class="content-wrapper">
+			{{ content }}
+			{% include footer.html %}
+		</div>
 
-    {% include footer.html %}
-
-  </body>
-
+		<script src="{{ "static/js/lib/require.js" | prepend: site.baseurl }}" data-main="{{ "static/js/main.js" | prepend: site.baseurl }}"></script>
+	</body>
 </html>

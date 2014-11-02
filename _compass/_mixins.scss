@@ -1,0 +1,104 @@
+
+	/*
+	Mixins
+	------------------------------------------ 
+	*/
+
+		@mixin box-sizing {
+			-webkit-box-sizing: border-box; 	/* Safari/Chrome, other WebKit */
+			   -moz-box-sizing: border-box;    	/* Firefox, other Gecko */
+			        box-sizing: border-box;     /* Opera/IE 8+ */	
+		}
+		
+		@mixin background-cover {
+			-webkit-background-size: cover;
+			   -moz-background-size: cover;
+			     -o-background-size: cover;
+				 	background-size: cover;				
+		}
+		
+		@mixin noList() {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+	/*
+	Fonts
+	------------------------------------------ 
+	*/
+	
+		/*
+		@mixin Roboto($size: 300) {
+			font-family: 'Roboto', sans-serif;
+			@if $size == 300 {
+				font-weight: 300;
+			}
+			@if $size == 400 {
+				font-weight: 400;
+			}
+			@if $size == 500 {
+				font-weight: 600;
+			}
+		}
+		*/
+
+		@mixin AnticSlab() {
+			font-family: 'Antic Slab', serif;
+			font-weight: normal;
+		}
+		
+	/*
+	Animations
+	------------------------------------------ 
+	*/
+
+		@mixin custom_animation($delay, $duration, $ease, $animation) {
+			animation-delay: $delay;
+			animation-duration: $duration;
+			animation-name: $animation;
+			animation-fill-mode: forwards;
+			animation-timing-function: $ease;
+
+			-webkit-animation-delay: $delay;
+			-webkit-animation-duration: $duration;
+			-webkit-animation-name: $animation;
+			-webkit-animation-fill-mode: forwards;
+			-webkit-animation-timing-function: $ease;
+			
+			-moz-animation-delay: $delay;
+			-moz-animation-duration: $duration;
+			-moz-animation-name: $animation;
+			-moz-animation-fill-mode: forwards;
+			-moz-animation-timing-function: $ease;
+			
+			-o-animation-delay: $delay;
+			-o-animation-duration: $duration;
+			-o-animation-name: $animation;
+			-o-animation-fill-mode: forwards;
+			-o-animation-timing-function: $ease;
+
+			-ms-animation-delay: $delay;
+			-ms-animation-duration: $duration;
+			-ms-animation-name: $animation;
+			-ms-animation-fill-mode: forwards;
+			-ms-animation-timing-function: $ease;
+		}
+		
+		@mixin keyframe ($animation_name) {
+		    @-webkit-keyframes $animation_name {
+		        @content;
+		    }
+		    @-moz-keyframes $animation_name {
+		        @content;
+		    }
+		    @-ms-keyframes $animation_name {
+		        @content;
+		    }
+		    @-o-keyframes $animation_name {
+		        @content;
+		    }
+		    @keyframes $animation_name {
+		        @content;
+		    }
+		}

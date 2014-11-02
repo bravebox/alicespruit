@@ -1,0 +1,95 @@
+---
+layout: default
+---
+
+<div class="pure-g  site-leader  site-leader--bg">
+	<div class="site-leader__title  text-center">
+		<h1>Alice Spruit</h1>
+		<h3>creatief in research, taal en fotografie</h3>
+		<p><a href="#" class="primary-button">huur mij in / bekijk mijn CV</a></p>
+	</div>
+</div>
+
+
+<section class="pure-section  pure-section--padding  pure-section--quaternary">
+	<div class="pure-c">
+		<div class="pure-g">
+			<div class="pure-u-md-1-1  pure--center">
+				<div class="entry-content  text-center">
+					<img src="static/img/alice-spruit-logo.png" alt="alice-spruit-logo" />
+					<p>Hi, ik ben Alice Spruit. Sint veritatis fugiat augue vulputate mollit? Interdum sed cras, mus distinctio rerum, vivamus! Esse. Dolorem donec earum cumque massa tortor voluptatibus viverra, ridiculus posuere. Provident ante, blanditiis beatae! Culpa nemo minus anim nonummy dolor? Dolorem incididunt aut fringilla doloremque mollitia modi possimus! Nihil lacinia nunc, class, voluptates earum, a, egestas perferendis maxime? Temporibus! Dolor vitae tristique laboris, officiis deleniti do. Corrupti fugiat, cumque temporibus fuga anim, quasi occaecat animi, ut, labore habitasse, blandit, feugiat ligula occaecat? Nibh eu officia volutpat ullamcorper, unde odio laudantium, eros malesuada eum itaque dapibus rutrum potenti maiores felis per dui feugiat, mollitia autem illum class.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- specials 2x -->
+<section class="pure-section  pure-section--tertiary">
+	<!-- specials 1 -->
+	<div class="pure-g" style="background: url(static/img/test-01.jpg); background-size: cover;">
+		<div class="pure-u-sm-1-1 pure-u-md-1-3">
+			<div class="pure-panel">
+				<div class="pure-panel__title  pure-panel--controller">
+					<div class="entry-content  text-center">
+						<h3>Title van artikel</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+						<p><a href="#" class="primary-button">lees artikel</a></p>
+					</div>
+				</div>
+				<div class="pure-panel__photo  photo--small  pure-panel--controller" style="background: url(static/img/test-01.jpg); background-size: cover;"></div>
+			</div>
+		</div>
+		<div class="pure-u-sm-1-1 pure-u-md-2-3"></div>
+	</div>
+	<!-- specials 2 -->
+	<div class="pure-g" style="background: url(static/img/knijpers-cover-1.jpg); background-size: cover;">
+		<div class="pure-u-sm-1-1 pure-u-md-2-3"></div>
+		<div class="pure-u-sm-1-1 pure-u-md-1-3">
+			<div class="pure-panel">
+				<div class="pure-panel__title  pure-panel--controller">
+					<div class="entry-content  text-center">
+						<h3>Title van artikel</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+						<p><a href="#" class="primary-button">lees artikel</a></p>
+					</div>
+				</div>
+				<div class="pure-panel__photo  photo--small  pure-panel--controller" style="background: url(static/img/knijpers-cover-2.jpg); background-size: cover;"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="pure-section  pure-section--padding  pure-section--quaternary">
+	<div class="pure-g">
+		<div class="pure-u-sm-1-1  pure-u-md-1-1">
+			<div class="entry-content  text-center">
+				<h1 class="section__title">Artikelen</h1>
+			</div>
+		</div>
+		<div class="pure-u-sm-1-1  pure-u-md-1-3">
+			
+		</div>
+		<div class="pure-u-sm-1-1  pure-u-md-2-3">
+			<div class="entry-content">
+				<ul class="post-list">
+				{% for post in site.posts limit:4 %}
+					<li data-date="{{ post.date | date: "%-d/%m" }}">
+						<div class="post-list__header">
+							<h2 class="post-link"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+						</div>
+						<div class="post-list__footer">
+						{% for category in site.categories %}
+					  		<a name="{{ category | first }}">{{ category | first }}</a>
+					  	{% endfor %}
+						</div>
+					</li>
+				{% endfor %}
+				</ul>
+				<a href="/archief">Bekijk het archief</a>
+			</div>
+		</div>
+	</div>
+</section>

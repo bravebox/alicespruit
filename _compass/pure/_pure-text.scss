@@ -1,0 +1,62 @@
+
+	/*
+	Pure Text (extended module)
+	------------------------------------------ 
+	*/
+	
+		.text-center {
+			text-align: center;
+		}
+		
+		.text-left {
+			text-align: left;
+		}	
+	
+		.text-right {
+			text-align: right;
+		}		
+	
+		.text-justified {
+			text-align: justify;
+		}
+		
+		h1, h2, h3, h4, h5, h6, a, p, small, li, td, th {
+			@include AnticSlab;
+		}
+		
+		h1 {
+			font-size: 1.6em;
+			margin-bottom: 0.2em;			
+		}
+		
+		h2 {
+			font-size: 1.2em;
+		}
+		
+		.entry-content {
+			@include AnticSlab;
+			padding: 0px 20px;
+			p {
+				font-size: 80%;
+				line-height: 1.4em; 
+				margin-bottom: 26px;
+			}
+		}		
+		
+			@include breakpoint($breakpoint-sm) {
+			}		
+	
+			@include breakpoint($breakpoint-md) {
+				.entry-content {
+					padding: 0px;
+				}
+			}		
+	
+			@include breakpoint($breakpoint-lg) {
+				h1 { font-size: 2em; }
+				h2 { font-size: 1.6em; }
+			}		
+	
+			@include breakpoint($breakpoint-xl) {
+			}			
+						

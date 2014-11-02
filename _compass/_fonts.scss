@@ -1,0 +1,71 @@
+
+
+	/*
+	Fonts
+	------------------------------------------ 
+	*/
+
+		/*@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500);*/
+		@import url(http://fonts.googleapis.com/css?family=Antic+Slab);	
+		
+		@font-face {
+			font-family: 'icomoon';
+			src:url('../fonts/icomoon.eot?-3jxipf');
+			src:url('../fonts/icomoon.eot?#iefix-3jxipf') format('embedded-opentype'),
+				url('../fonts/icomoon.woff?-3jxipf') format('woff'),
+				url('../fonts/icomoon.ttf?-3jxipf') format('truetype'),
+				url('../fonts/icomoon.svg?-3jxipf#icomoon') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		
+		[class^="icon-"], [class*=" icon-"] {
+			font-family: 'icomoon';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+		
+			/* Better Font Rendering =========== */
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		
+		.icon-twitter:before {
+			content: "\f099";
+		}
+		.icon-facebook:before {
+			content: "\f09a";
+		}
+		.icon-google-plus:before {
+			content: "\f0d5";
+		}
+		.icon-envelope:before {
+			content: "\f0e0";
+		}
+		.icon-linkedin:before {
+			content: "\f0e1";
+		}
+		.icon-angle-left:before {
+			content: "\f104";
+		}
+		.icon-angle-right:before {
+			content: "\f105";
+		}
+		.icon-angle-up:before {
+			content: "\f106";
+		}
+		.icon-angle-down:before {
+			content: "\f107";
+		}
+		.icon-cancel:before {
+			content: "\e117";
+		}
+		.icon-menu:before {
+			content: "\e618";
+		}
+		.icon-pinterest:before {
+			content: "\e600";
+		}	
