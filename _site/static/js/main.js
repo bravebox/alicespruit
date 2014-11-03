@@ -59,15 +59,29 @@
 				
 				var images = "";
 
-				_500px.api('/photos', { feature: 'user', user_id: '2860815', image_size: 3 }, function (response) {
+				_500px.api('/photos', { feature: 'user', user_id: '2860815', rpp: 8, image_size: [2,3,4] }, function (response) {
+					
+					console.log(response.data.photos);
+					
 					$.each(response.data.photos, function(index, value) {
-
-						var $img = $('<img data-id="'+value.id+'" class="js--colorbox-grp">');
-							$img.attr('src', value.image_url);
+						var $img = $('<img src="'+value.image_url[1]+'" data-id="'+value.id+'" data-highres="'+value.image_url[2]+'" >');
 							$img.appendTo('.js--photoset');
 					});
-
-					$(".js--photoset").photosetGrid().show();
+					
+					$(".js--photoset").photosetGrid({
+						highresLinks: true,
+						rel: 'withhearts-gallery',
+						onComplete: function() {
+							$('.js--photoset').attr('style', '');
+							$('.js--photoset a').colorbox({
+								photo: true,
+								scalePhotos: true,
+								maxHeight:'90%',
+								maxWidth:'90%'
+							});
+						}
+					});
+					
 				});
 
 				/*
